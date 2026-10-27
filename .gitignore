@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.streamlit/secrets.toml
+
+# Local research data, metadata, and trained models.
+data/**
+!data/.gitkeep
+artifacts/**
+!artifacts/.gitkeep
+*.sqlite
+*.sqlite3
+*.joblib
+*.pkl
+
+.DS_Store
+*.log
