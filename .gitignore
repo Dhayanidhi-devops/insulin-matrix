@@ -1,12 +1,30 @@
 .venv/
+venv/
+env/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-.streamlit/secrets.toml
 
-# Local research data, metadata, and trained models.
+# Credentials, environment files, and API keys.
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*.key
+credentials.json
+credentials.yaml
+credentials.yml
+secrets.json
+secrets.yaml
+secrets.yml
+*api_key*
+*apikey*
+
+# Local research data, trained models, and real patient files.
+# Uploads, processed copies, and the SQLite database stay on this machine.
 data/**
 !data/.gitkeep
 artifacts/**
@@ -15,6 +33,13 @@ artifacts/**
 *.sqlite3
 *.joblib
 *.pkl
+*.patient.csv
+*.patient.xlsx
+*_phi.csv
+*_phi.xlsx
+
+# Generated download bundle. The source files are already in Git.
+Insulin_Matrix.zip
 
 .DS_Store
 *.log
