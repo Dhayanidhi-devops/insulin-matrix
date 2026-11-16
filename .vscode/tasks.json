@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Insulin Matrix: Backend",
+      "type": "shell",
+      "command": "./scripts/dev-backend.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "uvicorn",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting Insulin Matrix API",
+          "endsPattern": "(Uvicorn running|Application startup complete)"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "insulin-matrix"
+      }
+    },
+    {
+      "label": "Insulin Matrix: Frontend",
+      "type": "shell",
+      "command": "./scripts/dev-frontend.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting Insulin Matrix UI",
+          "endsPattern": "Local:"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "insulin-matrix"
+      }
+    },
+    {
+      "label": "Insulin Matrix: Full stack",
+      "dependsOn": ["Insulin Matrix: Backend", "Insulin Matrix: Frontend"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "Insulin Matrix: E2E smoke",
+      "type": "shell",
+      "command": "./scripts/e2e-smoke.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
