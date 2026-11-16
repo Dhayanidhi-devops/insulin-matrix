@@ -104,12 +104,16 @@ export function Stat({
   hint?: string
 }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-[linear-gradient(180deg,#fff,rgba(216,240,236,0.35))] p-4">
+    <div className="min-w-0 rounded-2xl border border-[var(--line)] bg-[linear-gradient(180deg,#fff,rgba(216,240,236,0.35))] p-4">
       <div className="text-xs font-semibold tracking-[0.08em] text-[var(--ink-soft)] uppercase">
         {label}
       </div>
-      <div className="display mt-2 text-3xl text-[var(--brand)]">{value}</div>
-      {hint ? <div className="mt-1 text-sm text-[var(--ink-soft)]">{hint}</div> : null}
+      <div className="display mt-2 truncate text-3xl text-[var(--brand)]">{value}</div>
+      {hint ? (
+        <div className="mt-1 truncate text-sm text-[var(--ink-soft)]" title={hint}>
+          {hint}
+        </div>
+      ) : null}
     </div>
   )
 }

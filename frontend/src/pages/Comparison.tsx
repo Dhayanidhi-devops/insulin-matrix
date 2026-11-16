@@ -71,18 +71,18 @@ export function ComparisonPage() {
       ) : (
         <>
           <Panel title="Metric chart">
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData}>
+            <div className="h-80 w-full min-h-[20rem]">
+              <ResponsiveContainer width="100%" height={320}>
+                <BarChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 8 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#d5e2e6" />
                   <XAxis dataKey="name" tick={{ fontSize: 11 }} interval={0} angle={-20} textAnchor="end" height={80} />
                   <YAxis domain={[0, 1]} />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="accuracy" fill="#0b3d4a" radius={[6, 6, 0, 0]} />
-                  <Bar dataKey="f1_macro" fill="#2a9d8f" radius={[6, 6, 0, 0]} />
-                  <Bar dataKey="precision" fill="#c9852c" radius={[6, 6, 0, 0]} />
-                  <Bar dataKey="recall" fill="#7aa2a9" radius={[6, 6, 0, 0]} />
+                  <Bar dataKey="accuracy" fill="#0b3d4a" radius={[6, 6, 0, 0]} isAnimationActive={false} />
+                  <Bar dataKey="f1_macro" fill="#2a9d8f" radius={[6, 6, 0, 0]} isAnimationActive={false} />
+                  <Bar dataKey="precision" fill="#c9852c" radius={[6, 6, 0, 0]} isAnimationActive={false} />
+                  <Bar dataKey="recall" fill="#7aa2a9" radius={[6, 6, 0, 0]} isAnimationActive={false} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

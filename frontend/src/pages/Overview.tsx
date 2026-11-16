@@ -84,14 +84,14 @@ export function OverviewPage() {
           <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
             <Panel title="Class distribution">
               {classData.length ? (
-                <div className="h-72">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={classData}>
+                <div className="h-72 w-full min-h-[18rem]">
+                  <ResponsiveContainer width="100%" height={288}>
+                    <BarChart data={classData} margin={{ top: 8, right: 8, left: 0, bottom: 8 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#d5e2e6" />
                       <XAxis dataKey="name" tick={{ fontSize: 12 }} interval={0} angle={-15} textAnchor="end" height={70} />
                       <YAxis />
                       <Tooltip />
-                      <Bar dataKey="value" fill="#146b78" radius={[8, 8, 0, 0]} />
+                      <Bar dataKey="value" fill="#146b78" radius={[8, 8, 0, 0]} isAnimationActive={false} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

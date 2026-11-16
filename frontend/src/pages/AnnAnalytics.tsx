@@ -64,18 +64,18 @@ export function AnnAnalyticsPage() {
           </div>
           <Panel title="Learning curves">
             {chartData.length ? (
-              <div className="h-80">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={chartData}>
+              <div className="h-80 w-full min-h-[20rem]">
+                <ResponsiveContainer width="100%" height={320}>
+                  <LineChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 8 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#d5e2e6" />
                     <XAxis dataKey="epoch" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    {history.loss ? <Line type="monotone" dataKey="loss" stroke="#0b3d4a" dot={false} /> : null}
-                    {history.val_loss ? <Line type="monotone" dataKey="val_loss" stroke="#c9852c" dot={false} /> : null}
-                    {history.accuracy ? <Line type="monotone" dataKey="accuracy" stroke="#2a9d8f" dot={false} /> : null}
-                    {history.val_accuracy ? <Line type="monotone" dataKey="val_accuracy" stroke="#7aa2a9" dot={false} /> : null}
+                    {history.loss ? <Line type="monotone" dataKey="loss" stroke="#0b3d4a" dot={false} isAnimationActive={false} /> : null}
+                    {history.val_loss ? <Line type="monotone" dataKey="val_loss" stroke="#c9852c" dot={false} isAnimationActive={false} /> : null}
+                    {history.accuracy ? <Line type="monotone" dataKey="accuracy" stroke="#2a9d8f" dot={false} isAnimationActive={false} /> : null}
+                    {history.val_accuracy ? <Line type="monotone" dataKey="val_accuracy" stroke="#7aa2a9" dot={false} isAnimationActive={false} /> : null}
                   </LineChart>
                 </ResponsiveContainer>
               </div>

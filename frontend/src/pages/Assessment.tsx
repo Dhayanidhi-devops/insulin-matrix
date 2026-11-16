@@ -166,14 +166,14 @@ export function AssessmentPage() {
             <div className="display text-4xl text-[var(--brand)]">{String(result.predicted_class)}</div>
             <p className="text-sm text-[var(--ink-soft)]">ID: {String(result.prediction_id)}</p>
             {probData.length ? (
-              <div className="mt-4 h-64">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={probData}>
+              <div className="mt-4 h-64 w-full min-h-[16rem]">
+                <ResponsiveContainer width="100%" height={256}>
+                  <BarChart data={probData} margin={{ top: 8, right: 8, left: 0, bottom: 8 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#d5e2e6" />
                     <XAxis dataKey="name" tick={{ fontSize: 11 }} interval={0} angle={-15} textAnchor="end" height={70} />
                     <YAxis domain={[0, 1]} />
                     <Tooltip />
-                    <Bar dataKey="value" fill="#146b78" radius={[8, 8, 0, 0]} />
+                    <Bar dataKey="value" fill="#146b78" radius={[8, 8, 0, 0]} isAnimationActive={false} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
