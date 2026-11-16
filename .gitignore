@@ -27,16 +27,24 @@ secrets.yml
 # Uploads, processed copies, and the SQLite database stay on this machine.
 data/**
 !data/.gitkeep
+!data/sample/
+!data/sample/**
 artifacts/**
 !artifacts/.gitkeep
 *.sqlite
 *.sqlite3
 *.joblib
 *.pkl
+*.keras
 *.patient.csv
 *.patient.xlsx
 *_phi.csv
 *_phi.xlsx
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+.vite/
 
 # Generated download bundle. The source files are already in Git.
 Insulin_Matrix.zip
